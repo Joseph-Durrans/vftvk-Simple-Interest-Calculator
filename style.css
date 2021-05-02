@@ -30,6 +30,10 @@ body {
     display: none;
 }
 
+.form-section .form-result-container #output p span {
+    background-color: yellow;
+}
+
 .form-section .form-result-container form fieldset {
     border: 0;
     margin: 0;
@@ -52,4 +56,8 @@ body {
 
 .form-section .form-result-container form fieldset .years-number input {
     width: 35px;
+}
+
+.form-section .form-result-container form fieldset .rate-slider p {
+    padding-left: 5px;
 }

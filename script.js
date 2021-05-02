@@ -32,26 +32,28 @@ document.addEventListener("DOMContentLoaded", (event) => {
             document.getElementById("yearsNumber").value
         );
 
-        console.log(amountNumber);
-        console.log(rateSliderValue);
-        console.log(yearsNumber);
+        if (!amountNumber > 0 || amountNumber < 0 || amountNumber == null) {
+            alert("Invalid principal. Please enter a positive number.");
+            document.getElementById("amountNumber").focus();
+        } else {
+            let compInterest = simpleInterest(
+                amountNumber,
+                yearsNumber,
+                rateSliderValue
+            );
 
-        let compInterest = simpleInterest(
-            amountNumber,
-            yearsNumber,
-            rateSliderValue
-        );
+            outputElement.style.display = "block";
 
-        outputElement.style.display = "block";
+            console.log();
 
-        console.log();
-
-        amountOutput.innerHTML = amountNumber;
-        interestOutput.innerHTML = rateSlider.value;
-        console.log(compInterest - amountNumber);
-        calculatedAmountOutput.innerHTML =
-            Math.ceil((compInterest - amountNumber) * 100) / 100;
-        calculatedYearOutput.innerHTML = new Date().getFullYear() + yearsNumber;
+            amountOutput.innerHTML = amountNumber;
+            interestOutput.innerHTML = rateSlider.value;
+            console.log(compInterest - amountNumber);
+            calculatedAmountOutput.innerHTML =
+                Math.ceil((compInterest - amountNumber) * 100) / 100;
+            calculatedYearOutput.innerHTML =
+                new Date().getFullYear() + yearsNumber;
+        }
     });
 });
 
