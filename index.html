@@ -1,16 +1,80 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Calculator</title>
+
+        <script src="script.js"></script>
+        <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-        <h1>Simple Interest Calculator</h1>
+        <div class="page-wrapper">
+            <section class="form-section">
+                <h1>Simple Interest Calculator</h1>
 
-        Amount <input type="number"  id="principal">  <br/>
-        Rate <input type="number"  id="rate">  <br/>
-        No. of Years <input type="number"  id="years">  <br/>
-        Interest : <span id="result"></span><br>
+                <div class="form-result-container">
+                    <form id="interestCalculatorForm">
+                        <fieldset>
+                            <div class="amount-number">
+                                <label for="amount-number">Amount</label>
+                                <input
+                                    name="amount-number"
+                                    type="number"
+                                    id="amountNumber"
+                                    required
+                                />
+                            </div>
 
-        <button onclick="compute()">Compute</button>
+                            <div class="rate-slider">
+                                <label for="rate-slider">Interest Rate</label>
+                                <input
+                                    name="rate-slider"
+                                    type="range"
+                                    min="0"
+                                    max="21"
+                                    step="0.1"
+                                    value="10.5"
+                                    class="slider"
+                                    id="rateSlider"
+                                    required
+                                />
+                                <p><span id="rateVal"></span>%</p>
+                            </div>
+
+                            <div class="years-number">
+                                <label for="years-number">No. of Years</label>
+                                <input
+                                    name="years-number"
+                                    type="number"
+                                    min="1"
+                                    value="1"
+                                    id="yearsNumber"
+                                    required
+                                />
+                            </div>
+
+                            <input type="submit" value="Compute Interest" />
+                        </fieldset>
+                    </form>
+
+                    <div id="output">
+                        <p>
+                            if you deposit
+                            <span id="amountOutput"></span>,<br />
+                            at an interest rate of
+                            <span id="interestOutput"></span>%.<br />
+                            You will recieve an amount of
+                            <span id="calculatedAmountOutput"></span>,<br />
+                            in the year
+                            <span id="calculatedYearOutput"></span>
+                        </p>
+                    </div>
+                </div>
+
+                <p>&copy;Everyone Can Get Rich</p>
+            </section>
+        </div>
     </body>
 </html>
